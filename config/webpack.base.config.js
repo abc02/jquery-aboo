@@ -17,6 +17,7 @@ module.exports = {
         extensions: ['.js'],
         alias: {
             "@": path.sourcePath,
+            'lib':"@/lib",
             "styles": "@/styles"
         },
     },

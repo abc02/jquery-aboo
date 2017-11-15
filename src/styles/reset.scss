@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+    &:after,&:before{
+        box-sizing:border-box;
+    }
+}
+body,
+div,
+p,
+main,
+section {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+a{
+    list-style: none;
+    color:inherit;
+}
+body {
+    width: 100%;
+    *cursor: default;
+    overflow: hidden;
+}

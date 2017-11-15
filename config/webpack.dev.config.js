@@ -16,6 +16,9 @@ module.exports = merge(baseWebpackConfig, {
     port: process.env.npm_package_config_port || 8080
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template:path.sourcePath + 'index.html'
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
