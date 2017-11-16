@@ -28,8 +28,6 @@ exports.entries = function () {
       var conf = {
         template: filePath,
         filename: filename + '.html',
-        chunks: [filename],
-        inject: true
       }
       arr.push(new HtmlWebpackPlugin(conf))
     })
