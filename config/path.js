@@ -15,10 +15,12 @@ exports.entries = function () {
       var filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'))
       map[filename] = filePath
     })
+    console.log(map)
     return map
   }
 
-  exports.htmlPlugin = function () {
+
+  exports.devHtmlPlugin = function () {
     var entryHtml = glob.sync(PAGE_PATH + '/*/*.html')
     var arr = []
     entryHtml.forEach((filePath) => {
@@ -29,16 +31,27 @@ exports.entries = function () {
         chunks: [filename],
         inject: true
       }
-      if (process.env.NODE_ENV === 'pord') {
-        conf = merge(conf, {
-          chunks: ['manifest', 'vendor', filename],
-          minify: {
-            removeComments: true,
-            collapseWhitespace: true,
-            removeAttributeQuotes: true
-          },
-          chunksSortMode: 'dependency'
-        })
+      arr.push(new HtmlWebpackPlugin(conf))
+    })
+    return arr
+  }
+  exports.prodHtmlPlugin = function () {
+    var entryHtml = glob.sync(PAGE_PATH + '/*/*.html')
+    var arr = []
+    entryHtml.forEach((filePath) => {
+      var filename = filePath.substring(filePath.lastIndexOf('\/') + 1, filePath.lastIndexOf('.'))
+      var conf = {
+        template: filePath,
+        filename: filename + '.html',
+        chunks: [filename],
+        inject: true,
+        chunks: ['manifest', 'vendor', filename],
+        minify: {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeAttributeQuotes: true
+        },
+        chunksSortMode: 'dependency'
       }
       arr.push(new HtmlWebpackPlugin(conf))
     })

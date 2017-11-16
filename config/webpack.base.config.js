@@ -1,9 +1,7 @@
 const webpack = require('webpack');
 const path = require('./path')
 
-let base = {
-    build: path.sourcePath + 'main.js'
-}
+
 
 module.exports = {
     // 入口文件

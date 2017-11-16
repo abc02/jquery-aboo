@@ -22,5 +22,5 @@ module.exports = merge(baseWebpackConfig, {
         NODE_ENV: JSON.stringify('dev')
       }
     }),
-  ].concat(path.htmlPlugin())
+  ].concat(path.devHtmlPlugin())
 })

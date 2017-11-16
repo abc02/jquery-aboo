@@ -11,7 +11,8 @@ module.exports = merge(baseWebpackConfig, {
     publicPath: "/", // server-relative
     hashDigestLength: 6,
     //导出文件
-    filename: '[name]_[chunkhash].js'
+    filename: 'javascripts/[name].[chunkhash].js',
+    chunkFilename: 'javascripts/[id].[chunkhash].js'
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -19,11 +20,12 @@ module.exports = merge(baseWebpackConfig, {
         NODE_ENV: JSON.stringify('prod')
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
+    new webpack.LoaderOptionsPlugin({
       minimize: true,
       compress: {
-        warnings: false,
-      }
+        warnings: true,
+      },
+      sourceMap: true
     }),
     // new HtmlWebpackPlugin({
     //   template: path.sourcePath + '/index.html',
@@ -34,5 +36,5 @@ module.exports = merge(baseWebpackConfig, {
     //     preserveLineBreaks: true
     //   }
     // })
-  ].concat(path.htmlPlugin())
+  ].concat(path.prodHtmlPlugin())
 })
