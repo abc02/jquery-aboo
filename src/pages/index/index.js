@@ -1,9 +1,8 @@
 
 import FullPage from 'lib/fullPage';
 import 'normalize.css'
-import 'styles/reset.scss'
-import '../node_modules/fonts.css/fonts.css'
-
+import 'common/reset.scss'
+import './index.scss'
 let  runPage;
 
 runPage = new FullPage({

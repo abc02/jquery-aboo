@@ -7,7 +7,7 @@ let base = {
 
 module.exports = {
     // 入口文件
-    entry: base,
+    entry: path.entries,
     // 出口文件
     output: {
         path: path.outputPath,
@@ -18,7 +18,7 @@ module.exports = {
         alias: {
             "@": path.sourcePath,
             'lib':"@/lib",
-            "styles": "@/styles"
+            "common": "@/common"
         },
     },
 

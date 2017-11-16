@@ -25,14 +25,14 @@ module.exports = merge(baseWebpackConfig, {
         warnings: false,
       }
     }),
-    new HtmlWebpackPlugin({
-      template: path.sourcePath + '/index.html',
-      cache: false,
-      minify: {
-        collapseInlineTagWhitespace: true,
-        collapseWhitespace: true,
-        preserveLineBreaks: true
-      }
-    })
-  ]
+    // new HtmlWebpackPlugin({
+    //   template: path.sourcePath + '/index.html',
+    //   cache: false,
+    //   minify: {
+    //     collapseInlineTagWhitespace: true,
+    //     collapseWhitespace: true,
+    //     preserveLineBreaks: true
+    //   }
+    // })
+  ].concat(path.htmlPlugin())
 })
