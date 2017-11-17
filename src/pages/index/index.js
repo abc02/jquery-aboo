@@ -1,29 +1,12 @@
 
-import FullPage from 'lib/fullPage';
+import FullPage from 'lib/fullPage'
+import $ from 'jquery'
 import 'normalize.css'
 import 'common/reset.scss'
 import 'common/animate.scss'
+import 'common/fullpage.scss'
 import './main.scss'
-let runPage,
-    runSection;
 
-
-runPage = new FullPage({
-
-    id: 'article',                             // id of contain
-    slideTime: 800,                            // time of slide
-    effect: {                                  // slide effect
-        transform: {
-            translate: 'Y',					   // 'X'|'Y'|'XY'|'none'
-            scale: [1, 1],					   // [scalefrom, scaleto]
-            rotate: [0, 0]					   // [rotatefrom, rotateto]
-        },
-        opacity: [0, 1]                // [opacityfrom, opacityto]
-    },
-    start: 0,
-    mode: 'touch,wheel',               // mode of fullpage
-    easing: [0, .93, .39, .98],
-});
 
 // runSection = new FullPage({
 
@@ -41,3 +24,40 @@ runPage = new FullPage({
 //     easing: [0, .93, .39, .98],             // easing('ease','ease-in','ease-in-out' or use cubic-bezier like [.33, 1.81, 1, 1] )
 
 // });
+$(function () {
+    let runPage,
+        runSection;
+
+
+    runPage = new FullPage({
+
+        id: 'article',                             // id of contain
+        slideTime: 800,                            // time of slide
+        effect: {                                  // slide effect
+            transform: {
+                translate: 'Y',					   // 'X'|'Y'|'XY'|'none'
+                scale: [1, 1],					   // [scalefrom, scaleto]
+                rotate: [0, 0]					   // [rotatefrom, rotateto]
+            },
+            opacity: [0, 1]                // [opacityfrom, opacityto]
+        },
+        start: 2,
+        mode: 'touch,wheel',               // mode of fullpage
+        easing: [0, .93, .39, .98],
+
+
+    });
+    let $buttons = $('.buttons'),
+        $previewBoxChildren = $('.preview-box').children(),
+        $previewTextChildren = $('.preview-text > .buttons').children()
+    $buttons.on('click', 'li', function (e) {
+        let $target = $(this),
+            $index = $target.index()
+        $previewBoxChildren.siblings().removeClass('action').eq($index).addClass('action')
+        $previewTextChildren.siblings().removeClass('action').eq($index).addClass('action')
+        $previewTextChildren.siblings().children().removeClass('action')
+        $previewTextChildren.siblings().eq($index).children().addClass('action')
+    })
+})
+
+

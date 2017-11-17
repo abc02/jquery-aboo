@@ -1,0 +1,58 @@
+@charset "utf-8";
+.page {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    >.contain {
+        width: 100%;
+        height: 100%;
+        width: 100vw;
+        height: 100vh;
+        display: none;
+        position: relative;
+        z-index: 0;
+        .title,
+        .titleEng {
+            animation: dragLeft .7s ease-in-out both;
+            position: absolute;
+        }
+        .title {
+            animation-delay: .8s;
+            line-height: 60px;
+            letter-spacing: 8px;
+        }
+        .titleEng {
+            animation-delay: 1.2s;
+            line-height: 3.2;
+            font-weight: normal;
+            margin-top: 50px;
+        }
+    }
+}
+
+.current .contain,
+.slide .contain {
+    display: block;
+}
+
+.current {
+    display: block;
+    z-index: 1;
+}
+
+.slide {
+    display: block;
+    z-index: 2;
+}
+
+.swipe {
+    display: block;
+    z-index: 3;
+    transition-duration: 0ms !important;
+}
