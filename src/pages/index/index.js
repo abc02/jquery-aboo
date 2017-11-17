@@ -41,7 +41,7 @@ $(function () {
             },
             opacity: [0, 1]                // [opacityfrom, opacityto]
         },
-        start: 2,
+        start: 0,
         mode: 'touch,wheel',               // mode of fullpage
         easing: [0, .93, .39, .98],
 
@@ -50,7 +50,8 @@ $(function () {
     let $buttons = $('.buttons'),
         $previewBoxChildren = $('.preview-box').children(),
         $previewTextChildren = $('.preview-text > .buttons').children()
-    $buttons.on('click', 'li', function (e) {
+    $buttons.on('mouseenter mouseleave', 'li', function (e) {
+        console.log('hover')
         let $target = $(this),
             $index = $target.index()
         $previewBoxChildren.siblings().removeClass('action').eq($index).addClass('action')
