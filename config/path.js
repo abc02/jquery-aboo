@@ -28,6 +28,7 @@ exports.entries = function () {
       var conf = {
         template: filePath,
         filename: filename + '.html',
+        chunks: ['manifest', 'vendor', filename],
       }
       arr.push(new HtmlWebpackPlugin(conf))
     })

@@ -1,9 +1,74 @@
 @charset "utf-8";
-.section1{
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.section1 {
     height: 100%;
-    background-image: url('./assets/bg.pg');
+    height: 100vh;
+    background-image: url('./assets/bg.png');
     background-color: white;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    .contain {
+        >.wraper {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            .preview-wraper {
+                display: flex;
+                align-items: center;
+                .preview-img {
+                    width: 336px;
+                }
+            }
+            .download-wraper{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .title{
+                    color:white;
+                    margin-bottom: 52px;
+                    margin-bottom: 8vh;
+                    h1{
+                        font-size: 4.5rem;
+                    }
+                    p{
+                        font-size: 1.8rem;
+                    }
+                }
+                .download-code {
+                    display: flex;
+                    .qr-code {
+                        width: 180px;
+                    }
+                    .buttons {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        .button {
+                            display: flex;
+                            background-color: #e8635c;
+                            color: white;
+                            border-radius: 5px;
+                            padding: 6px 8px;
+                            margin-left: 18px;
+                        }
+                        .button-img {
+                            width: 62px;
+                        }
+                        .text-container {
+                            margin-left:8px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
 }

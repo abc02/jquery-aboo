@@ -1,4 +1,8 @@
 @charset "utf-8";
+#article {
+    position: relative;
+}
+
 .section1 {
     background-image: url('./assets/bg-01.png');
     background-color: white;
@@ -22,38 +26,6 @@
         font-weight: normal;
         top: 20%;
         right: 0;
-    }
-    .nav {
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .5);
-        background: #fff;
-        height: 70px;
-        line-height: 70px;
-        .wraper {
-            display: flex;
-            justify-content: space-between;
-            h1 {
-                position: relative;
-                .logo {
-                    position: absolute;
-                    top: 50%;
-                    left: 0;
-                    margin-top: -12px;
-                    width: 200px;
-                    height: 25px;
-                    transition: all .4s ease;
-                    &:hover {
-                        transform: rotate(5deg) scale(1.05);
-                    }
-                }
-                span {
-                    visibility: hidden;
-                }
-            }
-            li {
-                display: inline;
-                margin: 0 22px;
-            }
-        }
     }
 }
 
@@ -148,7 +120,7 @@
                     &.action {
                         background-color: #f6655e;
                     }
-                    .page-text {
+                    .page-text {    
                         position: absolute;
                         top: 0;
                         left: 0;
@@ -169,22 +141,30 @@
             }
         }
     }
-    #footer {
-        margin-top: 80px;
-        margin-top: 8vh;
-        display: flex;
-        .footer-item {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            &.contact {
-                flex: 2;
-            }
-            >ul>li {
-                margin-bottom: 8px;
-                margin-bottom: 1vh;
-            }
-        }
+}
+
+#navBar {
+    z-index: 3;
+    position: absolute;
+    font-size: 0px;
+    line-height: 0;
+    right: 60px;
+    top:50%;
+    transform: translateY(-50%);
+    text-align: center;
+    li {
+        cursor: pointer;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        background: rgba($color: #ccc, $alpha: 1.0);
+        margin: 16px 0;
+    }
+    .active {
+        width: 16px;
+        height: 16px;
+        margin-left:-3px;
+        background: rgba($color: #cfcfcf, $alpha: 1.0);
     }
 }
 

@@ -4,8 +4,10 @@ import $ from 'jquery'
 import 'normalize.css'
 import 'common/reset.scss'
 import 'common/animate.scss'
+import 'common/common.scss'
 import 'common/fullpage.scss'
-import './main.scss'
+import '../../../node_modules/fonts.css/fonts.css'
+import './index.scss'
 
 
 // runSection = new FullPage({
@@ -29,10 +31,11 @@ $(function () {
         runSection;
 
 
-    runPage = new FullPage({
+    runSection = new FullPage({
 
         id: 'article',                             // id of contain
         slideTime: 800,                            // time of slide
+        continuous: false,
         effect: {                                  // slide effect
             transform: {
                 translate: 'Y',					   // 'X'|'Y'|'XY'|'none'
@@ -42,11 +45,30 @@ $(function () {
             opacity: [0, 1]                // [opacityfrom, opacityto]
         },
         start: 0,
-        mode: 'touch,wheel',               // mode of fullpage
+        mode: 'wheel,nav:navBar',               // mode of fullpage
         easing: [0, .93, .39, .98],
 
 
     });
+    // runPage = new FullPage({
+
+    //     id: 'pageContain',                             // id of contain
+    //     slideTime: 800,                            // time of slide
+    //     continuous: false,
+    //     effect: {                                  // slide effect
+    //         transform: {
+    //             translate: 'X',					   // 'X'|'Y'|'XY'|'none'
+    //             scale: [1, 1],					   // [scalefrom, scaleto]
+    //             rotate: [0, 0]					   // [rotatefrom, rotateto]
+    //         },
+    //         opacity: [0, 1]                // [opacityfrom, opacityto]
+    //     },
+    //     start: 0,
+    //     mode: 'wheel',               // mode of fullpage
+    //     easing: [0, .93, .39, .98],
+
+
+    // });
     let $buttons = $('.buttons'),
         $previewBoxChildren = $('.preview-box').children(),
         $previewTextChildren = $('.preview-text > .buttons').children()
