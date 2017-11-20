@@ -1,0 +1,74 @@
+@charset "utf-8";
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color: #f3f3f3;
+}
+
+.section1 {
+    .help-container {
+        .row {
+            margin-top: 50px;
+            margin-bottom: 30px;
+            h1 {
+                padding-left: 60px;
+                margin-bottom: 25px;
+            }
+            p {
+                padding-left: 60px;
+                color: rgba($color: #000000, $alpha: .7);
+            }
+            ul {
+                padding-left: 75px;
+                li {
+                    color: rgba($color: #000000, $alpha: .7);
+                    margin-bottom: 8px;
+                    list-style: decimal;
+                }
+            }
+        }
+        .prod-package {
+            background-color: white;
+            padding-top: 15px;
+            padding-bottom: 30px;
+            .prod-img {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                .package-item {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    text-align: center;
+                    height: 120px;
+                    position: relative;
+                    &:after{
+                        content: 'X1';
+                        display: block;
+                        position: absolute;
+                        right:0;
+                        bottom:0;
+                    }
+                    img {
+                        width: 120px;
+                        height: auto;
+                    }
+                    // &.changer img {
+                    //     width: 82px;
+                    // }
+                }
+            }
+        }
+        .dveice-use {}
+        .app-use {
+            .app-img {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                img {
+                    width: 216px;
+                }
+            }
+        }
+    }
+}
