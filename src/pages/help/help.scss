@@ -40,18 +40,24 @@ body {
                     flex-direction: column;
                     justify-content: space-between;
                     text-align: center;
-                    height: 120px;
-                    position: relative;
-                    &:after{
-                        content: 'X1';
-                        display: block;
-                        position: absolute;
-                        right:0;
-                        bottom:0;
+                    width: 120px;
+                    .package-text{
+                        position: relative;
+                        margin-left:-16px;
+                        color: rgba($color: #000000, $alpha: .7);
+                        &:after{
+                            content: 'X1';
+                            display: block;
+                            position: absolute;
+                            right:8px;
+                            bottom:0;
+                        }
                     }
+                    
                     img {
                         width: 120px;
                         height: auto;
+                        margin-bottom:16px;
                     }
                     // &.changer img {
                     //     width: 82px;
