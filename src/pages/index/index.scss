@@ -84,12 +84,16 @@
 
 .section3 {
     background-color: white;
+    >.contain > .wraper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
     .preview-container {
         position: relative;
         animation: fadeIn .7s ease-in-out both;
         animation-delay: .6s;
-        margin-top: 80px;
-        margin-top: 8vh;
+        margin-bottom: 16px;
         display: flex;
         align-items: center;
         justify-content: space-around;
