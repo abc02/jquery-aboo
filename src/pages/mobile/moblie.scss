@@ -1,0 +1,151 @@
+body {
+    height: 100%;
+    width:100%;
+    overflow: scroll !important;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  .title-container{
+    width: 100%;
+    width: 100vw;
+    text-align: center;
+    .title {
+      color: #f6655e;
+      font-weight: normal;
+      text-align: center;
+    }
+    .title-white {
+      @extend .title;
+      color: white !important;
+      width: 80%;
+      width: 80vw;
+      margin: 0 auto;
+    }
+  }
+  
+ 
+  .sub {
+    margin-top: 6%;
+    margin-top: 3vh;
+  }
+
+  .row {
+    margin: 0 auto;
+    width: 100%;
+    width: 100vw;
+    height: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 10%;
+    margin-top: 10vh;
+    &:first-child{
+        margin-top: 0;
+    }
+  }
+
+  .row-1 {
+    background-color: #f6655e;
+    justify-content: center;
+  }
+  .row-2,.row-3 {
+    justify-content: space-around;
+    align-items: center;
+  }
+  .row-4 {
+    /* padding: 0 20px; */
+    background-color: #f6655e;
+    justify-content: space-around;
+    color: white;
+  }
+  
+
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .logo {
+      width: 205px;
+      display: block;
+    }
+  }
+
+  .download-button {
+    margin-top: 20px;
+    width: 160px;
+    display: block;
+  }
+
+  .row {
+    padding-bottom: 1px;
+    .preview-container {
+      margin-top: 6%;
+      margin-top: 3vh;
+      width: 290px;
+      height: 485px;
+      position: relative;
+      .icon {
+        position: absolute;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .row-2 .icon{
+    width: 290px;
+    top: 38%;
+  }
+  .row-3 .icon {
+    width: 230px;
+  }
+  .row-3 .icon-security{
+    width: 130px;
+    bottom: 0;
+  }
+  .row-3 .icon-left{
+    top: 28%;
+    left: -8%;
+  }
+  .row-3 .icon-right{
+    top: 48%;
+    right: -8%;
+  }
+
+  .preview {
+    display: block;
+    width: 290px;
+    height: 485px;
+  }
+  .row-4 .text {
+    text-align: left;
+    margin:0 18px;
+
+  }
+  p {
+    line-height: 1.3;
+  }
+  .arrow-container{
+    height: 35px;
+    width: 100%;
+    position: absolute;
+    bottom: 6vh;
+    .arrow {
+      position: absolute;
+      left:50%;
+      margin-left: -40px;
+      height: 35px;
+      width: 80px;
+
+    }
+  }
+
+  .qrcode-container{
+    width: 160px;
+    height: 160px;
+  }

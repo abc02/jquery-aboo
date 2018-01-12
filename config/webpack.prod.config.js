@@ -11,8 +11,8 @@ module.exports = merge(baseWebpackConfig, {
     publicPath: "/", // server-relative
     hashDigestLength: 6,
     //导出文件
-    filename: 'javascripts/[name].[chunkhash].js',
-    chunkFilename: 'javascripts/[id].[chunkhash].js'
+    filename: 'javascripts/[name]_[chunkhash].js',
+    chunkFilename: 'javascripts/[id]_[chunkhash].js'
   },
   plugins: [
     new webpack.DefinePlugin({
