@@ -3,7 +3,7 @@ WEB_PATH='/home/jquery-aboo/'
 WEB_USER='root'
 WEB_USERGROUP='root'
 # we can do 
-echo "Start deployment vx.itnote.cn"
+echo "Start deployment jquery-aboo"
 cd $WEB_PATH
 echo "pulling source code..."
 # git reset --hard origin/release
