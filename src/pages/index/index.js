@@ -9,6 +9,7 @@ import '../../../node_modules/fonts.css/fonts.css'
 import './index.scss'
 $(function () {
     let Mobile = /Mobile/i.test(navigator.userAgent)
+    console.log('Mobile is', Mobile)
     if (Mobile) {
         location.href = 'moblie.html'
     } else {
